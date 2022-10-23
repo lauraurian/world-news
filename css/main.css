@@ -1,0 +1,335 @@
+/* This is your custom CSS file */
+/* region homepage */
+/* * {
+	border: 1px solid red;
+  } */
+
+/* common */
+*{
+	box-sizing: border-box;
+}
+
+.list__no__style {
+	padding: 0;
+	list-style-type: none;
+}
+
+.page__header {
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	background-color: #ffffff;
+}
+
+.logo {
+	width: 150px;
+}
+
+.root {
+	width: 1000px;
+	margin: auto;
+}
+
+.link__cnt {
+	width: 400px;
+}
+
+.nav__display {
+	display: block!important;
+	transition: all 5s ease-in;
+	position: absolute;
+
+	top: 100%;
+	left: auto;
+	background-color: #fff;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+.nav__display ul {
+	
+	display: flex!important;
+	flex-direction: column;
+}
+
+.nav__display ul li {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	font-weight: bold;
+	height: 50px;
+}
+
+.nav__display ul li:hover {
+	background-color: #00646b;
+}
+
+.nav__display ul li:hover a {
+	color: white;
+}
+
+.nav__display ul li a {
+	display: flex;
+	align-items: center;
+}
+
+.set__position {
+	width: 80%;
+	position: absolute;
+	bottom: 24px;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.width__one__third {
+	width: calc(100% / 3);
+}
+
+.most__viewed__section__grid {
+	display: grid;
+	/* gap: 1.5rem; */
+	/* grid-template-columns: 1fr 1fr; */
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.most__viewed__article:nth-child(n + 3) {
+	border-top: 2px solid #dfdfdf;
+}
+
+.most__viewed__article:nth-child(odd) {
+	padding: 1rem 1rem 1rem 0;
+	border-right: 2px solid #dfdfdf;
+}
+
+.most__viewed__article:nth-child(even) {
+	padding: 1rem;
+}
+
+/* region general  classes */
+.no__style__link {
+	text-decoration: none;
+	color: #0f0f7b;
+}
+
+.no__style__link:hover {
+	text-decoration: underline;
+}
+
+.display__text__blue {
+	color: #0b0b85;
+}
+
+.favorite__news {
+	color:red;
+	/* margin-left: 5px; */
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+/* style toggle elem */
+
+.toggle {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.toggle_wrapper {
+	display: none;
+}
+
+/* #toggle.active {
+	background-color: #000;
+} */
+
+.toggle::before {
+	content: '';
+	position: absolute;
+	width: 28px;
+	height: 2px;
+	background: #000;
+	transition: .2s;
+	transform: translateY(-10px);
+	box-shadow: 0 10px 0 #000;
+}
+
+.toggle.active::before {
+	transform: translateY(0) rotate(45deg);
+	box-shadow: 0 0 0 #000;
+}
+
+.toggle::after {
+	content: '';
+	position: absolute;
+	width: 28px;
+	height: 2px;
+	background: #000;
+	transition: .2s;
+	transform: translateY(10px);
+}
+
+.toggle.active::after {
+	transform: translateY(0) rotate(-45deg);
+}
+
+.hidden {
+	display: none;
+}
+
+/* region spinner */
+
+.loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: auto;
+	border: 20px solid #EAF0F6;
+	border-radius: 50%;
+	border-top: 20px solid #108ad1;
+	width: 150px;
+	height: 150px;
+	animation: spinner 2s linear infinite;
+  }
+  
+  @keyframes spinner {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+
+
+ .page__content {
+	min-height: 1000px;
+ }
+
+
+@media screen and (max-width: 1096px) {
+	.root {
+		width: 100%;
+		margin: 0;
+	}
+
+	.headlines__image {
+		height: 100%;
+	}
+}
+@media screen and (max-width: 718px) {
+	.direction__column {
+		flex-direction: column;
+	}
+
+	.full__width {
+		width: 100% !important;
+	}
+
+	.px__none {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.bx__none {
+		border-right: none !important;
+		border-left: none !important;
+	}
+
+	.hr__visibility {
+		visibility: hidden;
+	}
+}
+
+
+@media screen and (max-width: 900px) {
+	.page__header {
+		flex-direction: column;
+	}
+
+	.mx__logo {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	.toggle_wrapper {
+		margin-top: 10px;
+		display: block;
+	}
+
+	.nav__bar {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 715px) {
+	.media__header__wrap {
+		flex-direction: column !important;
+		align-items: center !important;
+	}
+
+	.media__no__width {
+		width: 0 !important;
+	}
+
+	.px__1 {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	.logo {
+		align-self: center;
+	}
+
+	@media screen and (max-width: 280px) {
+		.fs__smaller {
+			font-size: 15px!important;
+		}
+	}
+}
+
+/* region postpage */
+
+.font__montserrat {
+	font-family: "Montserrat", sans-serif;
+}
+
+.orion {
+	width: 100px;
+	height: 100px;
+}
+
+.img__width {
+	width: 70%;
+}
+
+.article__wrapper {
+	display: flex;
+}
+
+.w__70 {
+	width: 70%;
+}
+
+.orion__facts {
+	width: 30%;
+	align-self: center;
+	padding: 20px;
+	box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+}
+
+@media screen and (max-width: 1096px) {
+	.aside {
+		flex-direction: column;
+	}
+
+	.post__full__width {
+		width: 100%;
+	}
+
+	.aside__wrapper__px {
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+}
